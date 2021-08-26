@@ -1,0 +1,164 @@
+.homeHeader{
+    padding-top: 28vh;
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
+    color: antiquewhite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.603);
+}
+
+.homeInfo{
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(252, 250, 248);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.603);
+}
+
+.loginHeader{
+    padding-top: 3vh;
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    color: antiquewhite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.603);
+}
+
+.error{
+    text-decoration: wavy;
+    font-family: consolas;
+    font-size: medium;
+    color: rgba(209, 5, 5, 0.938);
+}
+
+.error2{
+    text-decoration: wavy;
+    font-family: consolas;
+    color: rgba(209, 5, 5, 0.938);
+}
+
+.success{
+    text-decoration: wavy;
+    font-family: consolas;
+    font-size: medium;
+    color: rgba(53, 209, 5, 0.938);
+}
+
+.ancorText:link {
+    color: rgb(94, 166, 248);
+}
+.ancorText:visited {
+    color: rgb(94, 166, 248);
+}
+.ancorText:hover {
+    color: rgb(38, 139, 255);
+}
+.ancorText:active {
+    color: rgb(38, 139, 255);
+}
+
+.ancorText2:link {
+    color: rgb(7, 101, 207);
+}
+.ancorText2:visited {
+    color: rgb(7, 101, 207);
+}
+.ancorText2:hover {
+    color: rgb(0, 65, 139);
+}
+.ancorText2:active {
+    color: rgb(0, 65, 139);
+}
+
+.ancorText3:link {
+    color: rgb(7, 101, 207);
+    text-decoration: none;
+}
+.ancorText3:visited {
+    color: rgb(7, 101, 207);
+    text-decoration: none;
+}
+.ancorText3:hover {
+    color: rgb(0, 65, 139);
+    text-decoration: none;
+}
+.ancorText3:active {
+    color: rgb(0, 65, 139);
+    text-decoration: none;
+}
+
+.ancorText4:link {
+    background-color: rgb(207, 7, 7);
+    color: white;
+    text-decoration: none;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+.ancorText4:visited {
+    background-color: rgb(207, 7, 7);
+    color: white;
+    text-decoration: none;
+}
+.ancorText4:hover {
+    background-color: rgb(168, 3, 3);
+    color: white;
+    text-decoration: none;
+}
+.ancorText4:active {
+    background-color: rgb(168, 3, 3);
+    color: white;
+    text-decoration: none;
+}
+
+.message1{
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: antiquewhite;
+}
+
+.blogTitle{
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(27, 27, 27);
+}
+
+.blogSub{
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(27, 27, 27);
+}
+
+.blogContent{
+    text-decoration: wavy;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: justify;
+    color: rgb(27, 27, 27);
+}
+
+.blogTime{
+    text-decoration: wavy;
+    font-family: consolas;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.603);
+}
+
+.attenText1{
+    background-color: #bba803;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+

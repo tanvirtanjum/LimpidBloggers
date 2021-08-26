@@ -1,0 +1,12 @@
+1. Open XAMPP
+2. Start Apache and MySQL
+3. Go to http://localhost/phpmyadmin/index.php
+4. Click on `New` (Left Side Bar)
+5. Name the database as limpidbloggers_db and click create
+6. After create click IMPORT (Top Navigation Bar)
+7. Click Choose File
+8. Select limpidbloggers_db.sql (LimpidBloggers/DB Backups/Backups/Initial Backup/limpidbloggers_db.sql)
+   Update (Important): For final backup select (LimpidBloggers/DB Backups/Backups/Final Backup (Organized)/limpidbloggers_db.sql)
+9. Click on Go
+
+FINISH....

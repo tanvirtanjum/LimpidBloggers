@@ -1,0 +1,117 @@
+CREATE TABLE UserTypes (
+    id int AUTO_INCREMENT,
+    type varchar(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE RegistrationStatus (
+    id int AUTO_INCREMENT,
+    status varchar(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE BlogStatus (
+    id int AUTO_INCREMENT,
+    status varchar(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Categories (
+    id int AUTO_INCREMENT,
+    category varchar(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Logins (
+    id int AUTO_INCREMENT,
+    email varchar(255) NOT NULL UNIQUE,
+    password varchar(255) NOT NULL,
+    usertype_id int NOT NULL,
+    regstatus_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (usertype_id) REFERENCES UserTypes(id),
+    FOREIGN KEY (regstatus_id) REFERENCES RegistrationStatus(id)
+);
+
+CREATE TABLE Employees (
+    id int AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    contact varchar(255) NOT NULL,
+    blood_group varchar(255) NOT NULL,
+    gender varchar(255) NOT NULL,
+    birth_date date NOT NULL,
+    salary double(10,2) NOT NULL,
+    login_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (login_id) REFERENCES Logins(id)
+);
+
+CREATE TABLE Bloggers (
+    id int AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    contact varchar(255) NOT NULL,
+    blood_group varchar(255) NOT NULL,
+    gender varchar(255) NOT NULL,
+    birth_date date NOT NULL,
+    login_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (login_id) REFERENCES Logins(id)
+);
+
+CREATE TABLE Blogs (
+    id int AUTO_INCREMENT,
+    title varchar(255) NOT NULL,
+    content text NOT NULL,
+    post_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    comment_count int DEFAULT 0,
+    bookmark_count int DEFAULT 0,
+    category_id int NOT NULL,
+    blogstatus_id int NOT NULL,
+    blogged_by int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (category_id) REFERENCES Categories(id),
+    FOREIGN KEY (blogstatus_id) REFERENCES BlogStatus(id),
+    FOREIGN KEY (blogged_by) REFERENCES Bloggers(id)
+);
+
+CREATE TABLE Comments (
+    id int AUTO_INCREMENT,
+    comment text NOT NULL,
+    comment_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    blog_id int NOT NULL,
+    commenter_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (blog_id) REFERENCES Blogs(id),
+    FOREIGN KEY (commenter_id) REFERENCES Bloggers(id)
+);
+
+CREATE TABLE Bookmarks (
+    id int AUTO_INCREMENT,
+    blog_id int NOT NULL,
+    bookmarked_by int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (blog_id) REFERENCES Blogs(id),
+    FOREIGN KEY (bookmarked_by) REFERENCES Bloggers(id)
+);
+
+INSERT INTO `UserTypes`(type) VALUES ('Admin');
+INSERT INTO `UserTypes`(type) VALUES ('Moderator');
+INSERT INTO `UserTypes`(type) VALUES ('Blogger');
+
+INSERT INTO `RegistrationStatus`(status) VALUES ('Pending');
+INSERT INTO `RegistrationStatus`(status) VALUES ('Rejected');
+INSERT INTO `RegistrationStatus`(status) VALUES ('Approved');
+
+INSERT INTO `BlogStatus`(status) VALUES ('Pending');
+INSERT INTO `BlogStatus`(status) VALUES ('Rejected');
+INSERT INTO `BlogStatus`(status) VALUES ('Approved');
+
+INSERT INTO `Categories`(category) VALUES ('Travel');
+INSERT INTO `Categories`(category) VALUES ('Food');
+INSERT INTO `Categories`(category) VALUES ('Scientific');
+
+INSERT INTO `logins` (`id`, `email`, `password`, `usertype_id`, `regstatus_id`) VALUES (NULL, 'shihab@gmail.com', '12345', '1', '3'), (NULL, 'ethen@gmail.com', '12345', '2', '3'), (NULL, 'tanvir@gmail.com', '12345', '3', '3');
+
+INSERT INTO `employees` (`id`, `name`, `contact`, `blood_group`, `gender`, `birth_date`, `salary`, `login_id`) VALUES (NULL, 'Shihab Ahmed', '+8801515000000', 'A+', 'Male', '1998-07-20', '100000', '1'), (NULL, 'Sharaban Tahura Ethen', '+8801515111111', 'B+', 'Female', '1996-10-30', '80000', '2');
+
+INSERT INTO `bloggers` (`id`, `name`, `contact`, `blood_group`, `gender`, `birth_date`, `login_id`) VALUES (NULL, 'Tanvir Tanjum Shourav', '+8801515217821', 'O+', 'Female', '1997-10-23', '3');
